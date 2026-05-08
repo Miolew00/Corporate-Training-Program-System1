@@ -1,0 +1,36 @@
+﻿@model Corporate_Training_Program_System.Models.ViewModels.CourseDetailsViewModel
+
+<h2>@Model.Title</h2>
+
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Duration:</strong> @Model.Duration hours</p>
+<p><strong>Trainer:</strong> @Model.TrainerName</p>
+
+<h3>Enrollments</h3>
+
+@if (Model.Enrollments == null || Model.Enrollments.Count == 0)
+{
+    <p>No enrollments yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var e in Model.Enrollments)
+            {
+                <tr>
+                    <td>@e.EmployeeName</td>
+                    <td>@e.EnrollmentDate.ToShortDateString()</td>
+                    <td>@e.CompletionStatus</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

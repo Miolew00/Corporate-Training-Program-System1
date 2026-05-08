@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Corporate_Training_Program_System.Models.ViewModels.CourseViewModel>
+
+<h2>Courses</h2>
+
+<a class="btn btn-primary" asp-action="Create">Create New Course</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Trainer</th>
+            <th>Duration (h)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Title</td>
+                <td>@c.TrainerName</td>
+                <td>@c.Duration</td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@c.CourseId">Details</a>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@c.CourseId">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@c.CourseId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
