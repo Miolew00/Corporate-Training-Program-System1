@@ -1,0 +1,27 @@
+﻿@model Corporate_Training_Program_System.Models.Enrollment
+
+<h2>Add Enrollment</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Employee</label>
+        <select asp-for="EmployeeId" class="form-control">
+            @foreach (var emp in ViewBag.Employees)
+            {
+                <option value="@emp.EmployeeId">@emp.FirstName @emp.LastName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group mt-3">
+        <label>Course</label>
+        <select asp-for="CourseId" class="form-control">
+            @foreach (var c in ViewBag.Courses)
+            {
+                <option value="@c.CourseId">@c.Title</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Save</button>
+</form>

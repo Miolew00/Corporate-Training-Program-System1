@@ -1,0 +1,16 @@
+﻿@model Corporate_Training_Program_System.Models.Enrollment
+
+<h2>Delete Enrollment</h2>
+
+<p>Are you sure you want to delete this enrollment?</p>
+
+<ul>
+    <li><strong>Employee:</strong> @Model.Employee.FirstName @Model.Employee.LastName</li>
+    <li><strong>Course:</strong> @Model.Course.Title</li>
+</ul>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="EnrollmentId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

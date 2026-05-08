@@ -1,0 +1,8 @@
+﻿@model Corporate_Training_Program_System.Models.Employee
+
+<h2>@Model.FirstName @Model.LastName</h2>
+
+<p><strong>Position:</strong> @Model.Position</p>
+
+<a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.EmployeeId">Edit</a>
+<a class="btn btn-secondary" asp-action="Index">Back</a>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Corporate_Training_Program_System.Models.Enrollment>
+
+<h2>Enrollments</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Add Enrollment</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Course</th>
+            <th>Enrolled On</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.Employee.FirstName @e.Employee.LastName</td>
+                <td>@e.Course.Title</td>
+                <td>@e.EnrolledOn.ToShortDateString()</td>
+                <td>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@e.EnrollmentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

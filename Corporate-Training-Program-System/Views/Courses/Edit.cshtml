@@ -25,7 +25,7 @@
 
     <div class="form-group mt-2">
         <label asp-for="TrainerId"></label>
-        <input asp-for="TrainerId" class="form-control" />
+        <select asp-for="TrainerId" asp-items="ViewBag.Trainers" class="form-control"></select>
         <span asp-validation-for="TrainerId" class="text-danger"></span>
     </div>
 

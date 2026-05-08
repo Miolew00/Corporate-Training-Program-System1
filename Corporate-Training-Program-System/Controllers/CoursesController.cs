@@ -1,5 +1,4 @@
-﻿using Corporate_Training_Program_System.Data;
-using Corporate_Training_Program_System.Models;
+﻿using Corporate_Training_Program_System.Models;
 using Corporate_Training_Program_System.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -52,11 +51,12 @@ namespace Corporate_Training_Program_System.Controllers
                 Description = course.Description,
                 Duration = course.Duration,
                 TrainerName = course.Trainer.FirstName + " " + course.Trainer.LastName,
+
+                // FIXED: Removed EnrollmentDate + CompletionStatus
                 Enrollments = course.Enrollments.Select(e => new EnrollmentItemViewModel
                 {
                     EmployeeName = e.Employee.FirstName + " " + e.Employee.LastName,
-                    EnrollmentDate = e.EnrollmentDate,
-                    CompletionStatus = e.CompletionStatus
+                    EnrolledOn = e.EnrolledOn
                 }).ToList()
             };
 

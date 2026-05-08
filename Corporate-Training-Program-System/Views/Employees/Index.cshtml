@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Corporate_Training_Program_System.Models.Employee>
+
+<h2>Employees</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Add Employee</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.FirstName @e.LastName</td>
+                <td>@e.Position</td>
+                <td>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@e.EmployeeId">Details</a>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@e.EmployeeId">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@e.EmployeeId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
