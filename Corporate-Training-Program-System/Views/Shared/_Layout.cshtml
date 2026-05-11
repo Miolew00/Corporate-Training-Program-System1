@@ -3,54 +3,82 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Corporate Training Program</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <title>@ViewData["Title"] - Corporate Training Program System</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- DARK MODE THEME -->
+    <link rel="stylesheet" href="~/css/site-dark.css" />
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Training System</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg" style="background:#161b22; border-bottom:1px solid #30363d;">
+        <div class="container-fluid">
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+            <a class="navbar-brand" href="/" style="color:#58a6ff; font-weight:900;">
+                Corporate Training
+            </a>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Courses" asp-action="Index">Courses</a>
-                        </li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    style="background:#30363d;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Employees" asp-action="Index">Employees</a>
-                        </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Trainers" asp-action="Index">Trainers</a>
-                        </li>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Enrollments" asp-action="Index">Enrollments</a>
-                        </li>
-                    </ul>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Courses" style="color:white; font-weight:bold;">Courses</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Employees" style="color:white; font-weight:bold;">Employees</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Trainers" style="color:white; font-weight:bold;">Trainers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Enrollments" style="color:white; font-weight:bold;">Enrollments</a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Auth/Login" style="color:#58a6ff; font-weight:bold;">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Auth/Register" style="color:#58a6ff; font-weight:bold;">Register</a>
+                    </li>
+
+                </ul>
+
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <div class="container mt-4">
-        @RenderBody()
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FOOTER -->
+    <footer class="text-center mt-5" style="color:#58a6ff; font-weight:bold;">
+        Corporate Training Program System © @DateTime.Now.Year
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>
