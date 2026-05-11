@@ -19,7 +19,7 @@
             <tr>
                 <td>@e.Employee.FirstName @e.Employee.LastName</td>
                 <td>@e.Course.Title</td>
-                <td>@e.EnrolledOn.ToShortDateString()</td>
+                <td>@e.EnrollmentDate.ToShortDateString()</td>
                 <td>
                     <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@e.EnrollmentId">Delete</a>
                 </td>

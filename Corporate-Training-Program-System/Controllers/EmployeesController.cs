@@ -1,4 +1,4 @@
-﻿using Corporate_Training_Program_System.Data;
+﻿using Corporate_Training_Program_System.Models;
 using Corporate_Training_Program_System.Models;
 using Microsoft.AspNetCore.Mvc;
 

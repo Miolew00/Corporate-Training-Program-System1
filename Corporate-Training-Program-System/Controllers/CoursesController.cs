@@ -56,7 +56,7 @@ namespace Corporate_Training_Program_System.Controllers
                 Enrollments = course.Enrollments.Select(e => new EnrollmentItemViewModel
                 {
                     EmployeeName = e.Employee.FirstName + " " + e.Employee.LastName,
-                    EnrolledOn = e.EnrolledOn
+                    EnrolledOn = e.EnrollmentDate
                 }).ToList()
             };
 
